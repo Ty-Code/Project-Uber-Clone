@@ -28,11 +28,15 @@ h1 {
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
 }
 
 h3 {
-  font-size: 2.5rem;
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
 }
 
 /* 
@@ -79,57 +83,67 @@ Buttons
   width: max-content;
 }
 
-/* 
-========================================
-Header
-========================================
-*/
-
-header {
-  top: 0;
-  height: 70px;
-  padding: 12px 5%;
-  background-color: black;
-  width: 100%;
+.btn__language,
+.btn__products,
+.btn__login {
+  width: 70px;
+  height: 36px;
+  color: #fff;
+  background-color: #000;
+  outline: none;
+  border: none;
+  margin-right: 10px;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
 
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 }
 
-.logo-container {
-  width: 72px;
+.btn__products {
+  width: 100%;
+  height: 36px;
+}
+.btn__login {
+  width: 100%;
+  height: 36px;
 }
 
-.logo-container img {
-  max-width: 100%;
+.nav__btn {
+  border-radius: 30px;
+}
+.nav__btn:hover {
+  background-color: rgb(99, 99, 99);
+  transition-duration: 300ms;
 }
 
-.navbar {
-  flex: 1;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 10px;
-}
-
-.navbar__main-menu,
-.navbar__language-menu,
-.corner-menu ul {
-  display: flex;
-}
-
-.navbar__main-menu a,
-.navbar__language-menu a,
-.corner-menu ul a {
+.btn {
   padding: 10px 12px;
   color: #fff;
 }
 
-#sign-up-btn {
+.sign-up-btn {
+  margin-left: 5px;
   background-color: #fff;
   color: black;
   border-radius: 30px;
 }
+.navbar__toggle-btn {
+  margin-left: 20px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#navbar__toggle {
+  visibility: hidden;
+}
+
 /* 
 ========================================
 Layout
@@ -151,7 +165,8 @@ Layout
   width: 100%;
 }
 
-.news-section, .apps-section {
+.news-section,
+.apps-section__container {
   max-width: 1240px;
   width: 80%;
   margin: auto;
@@ -162,7 +177,8 @@ Layout
   grid-gap: 20px;
 }
 
-.about-section {
+.about-section,
+.signup-section {
   max-width: 1240px;
   width: 80%;
   margin: auto;
@@ -172,7 +188,57 @@ Layout
   grid-gap: 20px;
 }
 
+.footer-container {
+  max-width: 1240px;
+  width: 90%;
+  margin: auto;
 
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 180px 1fr 75px;
+  grid-gap: 20px;
+}
+
+/* 
+========================================
+Header
+========================================
+*/
+
+header {
+  top: 0;
+  height: 70px;
+  padding: 12px 5%;
+  background-color: black;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo-container {
+  width: 72px;
+}
+
+.header__logo-container img {
+  max-width: 100%;
+}
+
+.navbar {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px;
+}
+
+.navbar__main-menu,
+.navbar__aside-menu,
+.login-menu ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
 
 /* 
 ========================================
@@ -183,8 +249,9 @@ Console Section(1st Section)
 .console-container {
   position: absolute;
   width: 80%;
-  height: 550px;
+  height: 540px;
   z-index: 1;
+
   display: flex;
 }
 .console {
@@ -208,13 +275,13 @@ Console Section(1st Section)
 .console__second-row {
   height: 100%;
 
-  padding: 20px;
+  padding: 20px 0;
   background-color: #fff;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: baseline;
+  justify-content: space-evenly;
 }
 
 .console__second-row {
@@ -226,12 +293,11 @@ Console Section(1st Section)
 
 .console__first-row_icon-box img {
   padding-bottom: 10px;
-  opacity: 0.98;
   text-align: center;
 }
 
 .console__first-row_icon-box {
-  width: 105px;
+  width: 10%;
   text-align: center;
 }
 
@@ -283,9 +349,10 @@ News Section(3rd Section)
 .news-section {
   padding: 60px 0;
 }
-.news-section h1 {
+.news-section h2 {
   grid-row: 1 / 2;
   grid-column: span 12;
+  padding-bottom: 20px;
 }
 
 .thumbnail-box__img img {
@@ -301,14 +368,17 @@ News Section(3rd Section)
 
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .thumbnail-box__article {
-  height: 150px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  flex: 1;
+  height: min-content;
+  display: block;
+}
+
+.thumbnail-box__article > h4 {
+  padding-bottom: 8px;
 }
 
 .thumnail-box__inner-box {
@@ -367,14 +437,186 @@ About Section(4th Section)
 
 /* 
 ========================================
-About Section(5th Section)
+Apps Section(5th Section)
 ========================================
 */
 
-.news-section {
-  padding: 60px 0;
+.apps-section {
+  background-color: #f6f6f6;
+  width: 100%;
 }
-.news-section h1 {
+
+.apps-section__container {
+  padding: 60px 0;
+  grid-gap: 40px;
+}
+
+.apps-section h2 {
   grid-row: 1 / 2;
   grid-column: span 12;
+  padding-bottom: 20px;
+}
+
+.apps-box__img {
+  width: 150px;
+}
+
+.apps-box__img img {
+  width: 100%;
+}
+
+.apps-box {
+  grid-row: 2/3;
+  grid-column: span 6;
+
+  padding: 24px 5px 24px 24px;
+
+  background-color: #fff;
+  border: 1px solid hsla(0, 0%, 0%, 0.12);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 
+========================================
+Signup Section(6th Section)
+========================================
+*/
+
+.signup-section {
+  grid-gap: 40px;
+}
+
+.signup-box {
+  grid-column: span 6;
+
+  height: 85px;
+  margin: 64px 0;
+
+  border-bottom: 1px solid black;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 
+========================================
+Footer
+========================================
+*/
+
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 64px 0;
+}
+
+.footer__logo-container {
+  margin-left: -15px;
+}
+
+.footer__logo-container img {
+  height: 100px;
+}
+
+.help-topic {
+  grid-row: 1 / 2;
+  grid-column: span 2;
+
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+}
+.help-topic p:hover {
+  border-bottom: 1px solid #fff;
+  padding-bottom: 25px;
+}
+
+.topics {
+  grid-row: 2 / 3;
+  grid-column: span 3;
+  font-weight: 300;
+
+  display: flex;
+  flex-direction: column;
+}
+.topics p {
+  font-weight: 300;
+  padding-bottom: 15px;
+}
+
+.topics p:nth-child(1) {
+  font-weight: 500;
+}
+.social-media {
+  grid-row: 3 / 4;
+  grid-column: span 3;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.social-media__box a {
+  color: #f4f4f4;
+  height: 48px;
+  width: 48px;
+
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-media a:hover {
+  background-color: rgb(99, 99, 99);
+  transition-duration: 300ms;
+}
+
+@media (max-width: 1150px) {
+  #navbar__toggle {
+    visibility: visible;
+  }
+  .navbar {
+    display: none;
+  }
+
+  .btn__login span {
+    display: none;
+  }
+
+  .console-section {
+    display: grid;
+    grid-template-rows: auto auto;
+    align-items: flex-start;
+  }
+  .console-container {
+    position: static;
+    grid-row: 1 / 2;
+    width: 100%;
+    height: min-content;
+  }
+  .console {
+    width: 100%;
+    height: min-content;
+  }
+
+  .console__first-row {
+    justify-content: flex-start;
+  }
+
+  .console__second-row {
+    justify-content: space-around;
+    height: 300px;
+  }
+  .background-image1 {
+    grid-row: 2 / 3;
+  }
+
+  .background-image1 img {
+    z-index: 1;
+  }
 }
