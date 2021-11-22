@@ -22,18 +22,61 @@ a {
 Headings
 ========================================
 */
-
 h1 {
-  font-size: 2.5rem;
-}
-
-h2 {
   font-size: 3rem;
   font-weight: 500;
 }
 
+h2 {
+  font-size: 2.5rem;
+}
+
 h3 {
   font-size: 2.5rem;
+}
+
+/* 
+========================================
+Background Images
+========================================
+*/
+
+.background-image1 img {
+  object-fit: cover;
+  transform: scaleX(1);
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.background-image2 img {
+  object-fit: cover;
+  transform: scaleX(1);
+  z-index: 0;
+  width: 100%;
+  height: 300px;
+  opacity: 0.7;
+  display: block;
+}
+
+/* 
+========================================
+Buttons
+========================================
+*/
+
+.console__second-row a,
+.business-box a {
+  padding: 14px 25px;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  display: inline-block;
+  line-height: 20px;
+  width: max-content;
 }
 
 /* 
@@ -87,26 +130,6 @@ header {
   color: black;
   border-radius: 30px;
 }
-
-/* 
-========================================
-Buttons
-========================================
-*/
-
-.console__second-row a,
-.business-box a {
-  padding: 14px 25px;
-  background-color: #000;
-  color: #fff;
-  font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
-  display: inline-block;
-  line-height: 20px;
-  width: max-content;
-}
-
 /* 
 ========================================
 Layout
@@ -128,7 +151,7 @@ Layout
   width: 100%;
 }
 
-.news-section {
+.news-section, .apps-section {
   max-width: 1240px;
   width: 80%;
   margin: auto;
@@ -139,34 +162,21 @@ Layout
   grid-gap: 20px;
 }
 
-/* 
-========================================
-Background Images
-========================================
-*/
+.about-section {
+  max-width: 1240px;
+  width: 80%;
+  margin: auto;
 
-.background-image1 img {
-  object-fit: cover;
-  transform: scaleX(1);
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 20px;
 }
 
-.background-image2 img {
-  object-fit: cover;
-  transform: scaleX(1);
-  z-index: 0;
-  width: 100%;
-  height: 300px;
-  opacity: 0.7;
-  display: block;
-}
+
 
 /* 
 ========================================
-Console Section(First Section)
+Console Section(1st Section)
 ========================================
 */
 
@@ -237,7 +247,7 @@ Console Section(First Section)
 
 /* 
 ========================================
-Business Section(Second Section)
+Business Section(2nd Section)
 ========================================
 */
 
@@ -267,7 +277,7 @@ Business Section(Second Section)
 
 /* 
 ========================================
-News Section(Third Section)
+News Section(3rd Section)
 ========================================
 */
 .news-section {
@@ -278,15 +288,93 @@ News Section(Third Section)
   grid-column: span 12;
 }
 
-.thumbnail-img img {
+.thumbnail-box__img img {
   width: 100%;
   height: 100%;
+  padding-bottom: 10px;
 }
-.thumbnail-box:nth-of-type(1) {
+.thumbnail-box {
   grid-row: 2 / 3;
   grid-column: span 6;
+
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
-.thumbnail-box:nth-of-type(2) {
-  grid-row: 2 / 3;
-  grid-column: span 6;
+
+.thumbnail-box__article {
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.thumnail-box__inner-box {
+  padding-top: 20px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.thumnail-box__inner-box_span {
+  margin-right: 60px;
+  width: max-content;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+/* 
+========================================
+About Section(4th Section)
+========================================
+*/
+
+.about-section {
+  padding: 60px 0;
+}
+
+.about-box__img img {
+  padding-bottom: 10px;
+}
+
+.about-box {
+  grid-column: span 4;
+
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.about-box__article {
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.about-box__inner-box {
+  padding-top: 20px;
+
+  width: max-content;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+/* 
+========================================
+About Section(5th Section)
+========================================
+*/
+
+.news-section {
+  padding: 60px 0;
+}
+.news-section h1 {
+  grid-row: 1 / 2;
+  grid-column: span 12;
 }
