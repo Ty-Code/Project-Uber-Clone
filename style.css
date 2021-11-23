@@ -39,6 +39,12 @@ h4 {
   font-size: 1.5rem;
 }
 
+h5 {
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding-bottom: 15px;
+}
+
 /* 
 ========================================
 Background Images
@@ -46,21 +52,25 @@ Background Images
 */
 
 .background-image1 img {
-  object-fit: cover;
-  transform: scaleX(1);
-  z-index: 0;
   width: 100%;
   height: 100%;
+  z-index: 0;
+
+  object-fit: cover;
+  transform: scaleX(1);
+
   display: block;
 }
 
 .background-image2 img {
-  object-fit: cover;
-  transform: scaleX(1);
-  z-index: 0;
   width: 100%;
   height: 300px;
+  z-index: 0;
+
+  object-fit: cover;
+  transform: scaleX(1);
   opacity: 0.7;
+
   display: block;
 }
 
@@ -70,17 +80,26 @@ Buttons
 ========================================
 */
 
+#btn-company::after {
+  content: ' ̌';
+  font-size: 1rem;
+  padding-left: 8px;
+}
+
 .console__second-row a,
 .business-box a {
+  width: max-content;
   padding: 14px 25px;
+
   background-color: #000;
   color: #fff;
+
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   font-weight: 500;
-  display: inline-block;
   line-height: 20px;
-  width: max-content;
+
+  display: inline-block;
 }
 
 .btn__language,
@@ -88,14 +107,12 @@ Buttons
 .btn__login {
   width: 70px;
   height: 36px;
+  margin-right: 10px;
+
   color: #fff;
   background-color: #000;
   outline: none;
   border: none;
-  margin-right: 10px;
-  font-size: 1rem;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
 
   display: flex;
   justify-content: space-between;
@@ -119,9 +136,31 @@ Buttons
   transition-duration: 300ms;
 }
 
-.btn {
+.header__btn {
   padding: 10px 12px;
   color: #fff;
+
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+.footer__btn {
+  font-size: 0.9rem;
+  font-weight: 300;
+  padding-bottom: 15px;
+  color: #fff;
+}
+
+.footer__btn_help:hover {
+  border-bottom: 1px solid #fff;
+  padding-bottom: 25px;
+}
+
+.header__btn,
+.main__btn:hover,
+.footer__btn:hover {
+  cursor: pointer;
 }
 
 .sign-up-btn {
@@ -130,11 +169,13 @@ Buttons
   color: black;
   border-radius: 30px;
 }
+
 .navbar__toggle-btn {
   margin-left: 20px;
   background-color: #000;
   color: #fff;
   border: none;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -159,10 +200,9 @@ Layout
   align-items: center;
 }
 
-.business-section {
-  position: relative;
-  height: 100%;
-  width: 100%;
+.business-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
 }
 
 .news-section,
@@ -208,9 +248,10 @@ Header
 header {
   top: 0;
   height: 70px;
-  padding: 12px 5%;
-  background-color: black;
   width: 100%;
+  padding: 12px 5%;
+
+  background-color: black;
 
   display: flex;
   justify-content: space-between;
@@ -227,9 +268,10 @@ header {
 
 .navbar {
   flex: 1;
+  margin: 0 10px;
+
   display: flex;
   justify-content: space-between;
-  margin: 0 10px;
 }
 
 .navbar__main-menu,
@@ -274,8 +316,8 @@ Console Section(1st Section)
 .console__first-row_icon-box,
 .console__second-row {
   height: 100%;
-
   padding: 20px 0;
+
   background-color: #fff;
 
   display: flex;
@@ -316,26 +358,26 @@ Console Section(1st Section)
 Business Section(2nd Section)
 ========================================
 */
+.business-section {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
 
 .business-container {
   position: absolute;
   top: 20%;
   left: 0;
   right: 0;
-  margin: 0 auto;
-
   width: 80%;
   height: 175px;
   z-index: 1;
-
-  background-color: transparent;
-
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  margin: 0 auto;
 }
 
 .business-box {
   grid-column: 1/ 9;
+
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -352,6 +394,7 @@ News Section(3rd Section)
 .news-section h2 {
   grid-row: 1 / 2;
   grid-column: span 12;
+
   padding-bottom: 20px;
 }
 
@@ -374,6 +417,7 @@ News Section(3rd Section)
 .thumbnail-box__article {
   flex: 1;
   height: min-content;
+
   display: block;
 }
 
@@ -420,15 +464,15 @@ About Section(4th Section)
 
 .about-box__article {
   height: 150px;
+
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
 
 .about-box__inner-box {
-  padding-top: 20px;
-
   width: max-content;
+  padding-top: 20px;
   border-bottom: 1px solid #eee;
   padding-bottom: 5px;
 }
@@ -452,6 +496,7 @@ Apps Section(5th Section)
 .apps-section h2 {
   grid-row: 1 / 2;
   grid-column: span 12;
+
   padding-bottom: 20px;
 }
 
@@ -522,33 +567,25 @@ footer {
   grid-column: span 2;
 
   width: max-content;
+
   display: flex;
   flex-direction: column;
-}
-.help-topic p:hover {
-  border-bottom: 1px solid #fff;
-  padding-bottom: 25px;
 }
 
 .topics {
   grid-row: 2 / 3;
   grid-column: span 3;
+
   font-weight: 300;
+  width: max-content;
 
   display: flex;
   flex-direction: column;
 }
-.topics p {
-  font-weight: 300;
-  padding-bottom: 15px;
-}
 
-.topics p:nth-child(1) {
-  font-weight: 500;
-}
 .social-media {
   grid-row: 4 / 5;
-  grid-column: auto;
+  grid-column: 1 / 3;
 
   display: flex;
   justify-content: flex-start;
@@ -591,8 +628,10 @@ footer {
 }
 
 .copyright__box {
+  width: max-content;
   grid-row: 6 / 7;
   grid-column: auto;
+
   font-size: 0.8rem;
 }
 
@@ -612,6 +651,12 @@ footer {
   color: #fff;
 }
 
+/* 
+========================================
+Media Queries
+========================================
+*/
+
 @media (max-width: 1140px) {
   #navbar__toggle {
     visibility: visible;
@@ -627,11 +672,12 @@ footer {
   .console-section {
     display: grid;
     grid-template-rows: auto auto;
+
     align-items: flex-start;
   }
   .console-container {
-    position: static;
     grid-row: 1 / 2;
+    position: static;
     width: 100%;
     height: min-content;
   }
@@ -658,12 +704,10 @@ footer {
 
   .appstore-links__box {
     grid-row: 5/6;
-    grid-column: auto;
+    grid-column: 1/3;
   }
 
   .privacy-terms__box {
-    grid-column: auto;
-
     grid-column: 7 / 11;
   }
 }
@@ -690,8 +734,8 @@ footer {
   }
 
   .footer-container {
-    grid-template-columns: repeat(1, auto);
     width: 98%;
+    grid-template-columns: repeat(1, auto);
   }
 
   .topics {
