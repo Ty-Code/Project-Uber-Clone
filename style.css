@@ -169,7 +169,7 @@ Layout
 .apps-section__container {
   max-width: 1240px;
   width: 80%;
-  margin: auto;
+  margin: 0 auto;
 
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -181,21 +181,21 @@ Layout
 .signup-section {
   max-width: 1240px;
   width: 80%;
-  margin: auto;
+  margin: 0 auto;
 
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 20px;
 }
 
 .footer-container {
   max-width: 1240px;
   width: 90%;
-  margin: auto;
+  margin: 0 auto;
 
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 180px 1fr 75px;
+  grid-template-rows: 180px repeat(6, auto);
   grid-gap: 20px;
 }
 
@@ -411,8 +411,6 @@ About Section(4th Section)
 }
 
 .about-box {
-  grid-column: span 4;
-
   height: 100%;
 
   display: flex;
@@ -490,8 +488,6 @@ Signup Section(6th Section)
 }
 
 .signup-box {
-  grid-column: span 6;
-
   height: 85px;
   margin: 64px 0;
 
@@ -551,11 +547,11 @@ footer {
   font-weight: 500;
 }
 .social-media {
-  grid-row: 3 / 4;
-  grid-column: span 3;
+  grid-row: 4 / 5;
+  grid-column: auto;
 
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -576,7 +572,47 @@ footer {
   transition-duration: 300ms;
 }
 
-@media (max-width: 1150px) {
+.appstore-links__box {
+  grid-row: 4 / 5;
+  grid-column: 10 / 13;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.appstore-links__box_img {
+  width: 120px;
+  padding-right: 5px;
+}
+.appstore-links__box img {
+  height: 100%;
+  width: 100%;
+}
+
+.copyright__box {
+  grid-row: 6 / 7;
+  grid-column: auto;
+  font-size: 0.8rem;
+}
+
+.privacy-terms__box {
+  grid-row: 6 / 7;
+  grid-column: 10 / 13;
+  font-size: 0.8rem;
+
+  list-style: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.privacy-terms__box a {
+  color: #fff;
+}
+
+@media (max-width: 1140px) {
   #navbar__toggle {
     visibility: visible;
   }
@@ -605,7 +641,7 @@ footer {
   }
 
   .console__first-row {
-    justify-content: flex-start;
+    justify-content: space-around;
   }
 
   .console__second-row {
@@ -618,5 +654,90 @@ footer {
 
   .background-image1 img {
     z-index: 1;
+  }
+
+  .appstore-links__box {
+    grid-row: 5/6;
+    grid-column: auto;
+  }
+
+  .privacy-terms__box {
+    grid-column: auto;
+
+    grid-column: 7 / 11;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.6rem;
+  }
+  .news-section,
+  .apps-section__container,
+  .about-section,
+  .signup-section {
+    width: 98%;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 20px;
+  }
+  .about-section,
+  .signup-section {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(1, auto);
+    width: 98%;
+  }
+
+  .topics {
+    grid-column: auto;
+  }
+
+  .topic__citizenship,
+  .topic__travel {
+    grid-row: 3 / 4;
+  }
+
+  .privacy-terms__box {
+    grid-column: auto;
+
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.3rem;
+  }
+  .news-section,
+  .apps-section__container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .news-section h2 {
+    grid-column: span 4;
+  }
+  .thumbnail-box {
+    grid-column: span 4;
+    width: 100%;
+  }
+  .thumbnail-box:nth-of-type(2) {
+    grid-row: 3/4;
+  }
+
+  .apps-box {
+    grid-column: span 4;
+  }
+  .apps-box:nth-of-type(2) {
+    grid-row: 3/4;
+  }
+  .apps-section h2 {
+    grid-column: span 4;
   }
 }
