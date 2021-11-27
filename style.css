@@ -80,7 +80,7 @@ Buttons
 ========================================
 */
 
-#btn-company::after {
+.header-btn--company::after {
   content: ' ̌';
   font-size: 1rem;
   padding-left: 8px;
@@ -102,9 +102,9 @@ Buttons
   display: inline-block;
 }
 
-.btn__language,
-.btn__products,
-.btn__login {
+.header-btn--language,
+.header-btn--products,
+.header-btn--login {
   width: 70px;
   height: 36px;
   margin-right: 10px;
@@ -119,24 +119,24 @@ Buttons
   align-items: center;
 }
 
-.btn__products {
+.header-btn--products {
   width: 100%;
   height: 36px;
 }
-.btn__login {
+.header-btn--login {
   width: 100%;
   height: 36px;
 }
 
-.nav__btn {
+.header-btn--navbar {
   border-radius: 30px;
 }
-.nav__btn:hover {
+.header-btn--navbar:hover {
   background-color: rgb(99, 99, 99);
   transition-duration: 300ms;
 }
 
-.header__btn {
+.header-btn {
   padding: 10px 12px;
   color: #fff;
 
@@ -145,32 +145,32 @@ Buttons
   font-weight: 400;
 }
 
-.footer__btn {
+.footer-btn {
   font-size: 0.9rem;
   font-weight: 300;
   padding-bottom: 15px;
   color: #fff;
 }
 
-.footer__btn_help:hover {
+.footer-btn--help:hover {
   border-bottom: 1px solid #fff;
   padding-bottom: 25px;
 }
 
-.header__btn,
-.main__btn:hover,
-.footer__btn:hover {
+.header-btn,
+.main-btn:hover,
+.footer-btn:hover {
   cursor: pointer;
 }
 
-.sign-up-btn {
+.header-btn--signup {
   margin-left: 5px;
   background-color: #fff;
   color: black;
   border-radius: 30px;
 }
 
-.navbar__toggle-btn {
+.header-btn--toggle {
   margin-left: 20px;
   background-color: #000;
   color: #fff;
@@ -181,7 +181,7 @@ Buttons
   justify-content: center;
 }
 
-#navbar__toggle {
+#navbar-toggle {
   visibility: hidden;
 }
 
@@ -206,7 +206,7 @@ Layout
 }
 
 .news-section,
-.apps-section__container {
+.apps-section-container {
   max-width: 1240px;
   width: 80%;
   margin: 0 auto;
@@ -266,7 +266,7 @@ header {
   max-width: 100%;
 }
 
-.navbar {
+nav {
   flex: 1;
   margin: 0 10px;
 
@@ -274,8 +274,8 @@ header {
   justify-content: space-between;
 }
 
-.navbar__main-menu,
-.navbar__aside-menu,
+.navbar--mainmenu,
+.navbar--asidemenu,
 .login-menu ul {
   display: flex;
   align-items: center;
@@ -313,7 +313,7 @@ Console Section(1st Section)
   justify-content: space-around;
 }
 
-.console__first-row_icon-box,
+.console__first-row__icon-box,
 .console__second-row {
   height: 100%;
   padding: 20px 0;
@@ -333,17 +333,17 @@ Console Section(1st Section)
   justify-content: space-around;
 }
 
-.console__first-row_icon-box img {
+.console__first-row__icon-box img {
   padding-bottom: 10px;
   text-align: center;
 }
 
-.console__first-row_icon-box {
+.console__first-row__icon-box {
   width: 10%;
   text-align: center;
 }
 
-.console__first-row_icon-box:first-child {
+.console__first-row__icon-box:first-child {
   border-bottom: 5px solid black;
 }
 
@@ -425,7 +425,7 @@ News Section(3rd Section)
   padding-bottom: 8px;
 }
 
-.thumnail-box__inner-box {
+.thumbnail-box__inner-container {
   padding-top: 20px;
 
   display: flex;
@@ -433,7 +433,7 @@ News Section(3rd Section)
   justify-content: space-between;
 }
 
-.thumnail-box__inner-box_span {
+.thumbnail-box__link {
   margin-right: 60px;
   width: max-content;
   border-bottom: 1px solid #eee;
@@ -488,7 +488,7 @@ Apps Section(5th Section)
   width: 100%;
 }
 
-.apps-section__container {
+.apps-section-container {
   padding: 60px 0;
   grid-gap: 40px;
 }
@@ -562,7 +562,7 @@ footer {
   height: 100px;
 }
 
-.help-topic {
+.help-section {
   grid-row: 1 / 2;
   grid-column: span 2;
 
@@ -583,7 +583,7 @@ footer {
   flex-direction: column;
 }
 
-.social-media {
+.social-media-container {
   grid-row: 4 / 5;
   grid-column: 1 / 3;
 
@@ -592,7 +592,7 @@ footer {
   align-items: center;
 }
 
-.social-media__box a {
+.social-media-box a {
   color: #f4f4f4;
   height: 48px;
   width: 48px;
@@ -604,12 +604,12 @@ footer {
   justify-content: center;
 }
 
-.social-media a:hover {
+.social-media-container a:hover {
   background-color: rgb(99, 99, 99);
   transition-duration: 300ms;
 }
 
-.appstore-links__box {
+.appstore-links-container {
   grid-row: 4 / 5;
   grid-column: 10 / 13;
 
@@ -618,16 +618,16 @@ footer {
   justify-content: flex-start;
 }
 
-.appstore-links__box_img {
+.appstore-links {
   width: 120px;
   padding-right: 5px;
 }
-.appstore-links__box img {
+.appstore-links img {
   height: 100%;
   width: 100%;
 }
 
-.copyright__box {
+.copyright {
   width: max-content;
   grid-row: 6 / 7;
   grid-column: auto;
@@ -635,7 +635,7 @@ footer {
   font-size: 0.8rem;
 }
 
-.privacy-terms__box {
+.privacy-terms {
   grid-row: 6 / 7;
   grid-column: 10 / 13;
   font-size: 0.8rem;
@@ -647,7 +647,7 @@ footer {
   justify-content: space-around;
 }
 
-.privacy-terms__box a {
+.privacy-terms a {
   color: #fff;
 }
 
@@ -658,14 +658,14 @@ Media Queries
 */
 
 @media (max-width: 1140px) {
-  #navbar__toggle {
+  #navbar-toggle {
     visibility: visible;
   }
-  .navbar {
+  nav {
     display: none;
   }
 
-  .btn__login span {
+  .header-btn--login span {
     display: none;
   }
 
@@ -702,12 +702,12 @@ Media Queries
     z-index: 1;
   }
 
-  .appstore-links__box {
+  .appstore-links-container {
     grid-row: 5/6;
     grid-column: 1/3;
   }
 
-  .privacy-terms__box {
+  .privacy-terms {
     grid-column: 7 / 11;
   }
 }
@@ -717,7 +717,7 @@ Media Queries
     font-size: 2.6rem;
   }
   .news-section,
-  .apps-section__container,
+  .apps-section-container,
   .about-section,
   .signup-section {
     width: 98%;
@@ -742,12 +742,12 @@ Media Queries
     grid-column: auto;
   }
 
-  .topic__citizenship,
-  .topic__travel {
+  .topic--citizenship,
+  .topic--travel {
     grid-row: 3 / 4;
   }
 
-  .privacy-terms__box {
+  .privacy-terms {
     grid-column: auto;
 
     flex-direction: column;
@@ -759,7 +759,7 @@ Media Queries
     font-size: 2.3rem;
   }
   .news-section,
-  .apps-section__container {
+  .apps-section-container {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
   }
