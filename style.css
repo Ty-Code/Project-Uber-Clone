@@ -80,7 +80,7 @@ Buttons
 ========================================
 */
 
-.header-btn--company::after {
+.navbar__btn--company::after {
   content: ' ̌';
   font-size: 1rem;
   padding-left: 8px;
@@ -102,14 +102,27 @@ Buttons
   display: inline-block;
 }
 
-.header-btn--language,
-.header-btn--products,
-.header-btn--login {
-  width: 70px;
+
+.navbar__btn {
+  padding: 10px 12px;
+  color: #fff;
+  border-radius: 30px;
+
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+.navbar__btn:hover {
+  background-color: rgb(99, 99, 99);
+  transition-duration: 300ms;
+}
+
+.navbar__btn--withicon {
+  width: 100%;
   height: 36px;
   margin-right: 10px;
 
-  color: #fff;
   background-color: #000;
   outline: none;
   border: none;
@@ -117,32 +130,6 @@ Buttons
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.header-btn--products {
-  width: 100%;
-  height: 36px;
-}
-.header-btn--login {
-  width: 100%;
-  height: 36px;
-}
-
-.header-btn--navbar {
-  border-radius: 30px;
-}
-.header-btn--navbar:hover {
-  background-color: rgb(99, 99, 99);
-  transition-duration: 300ms;
-}
-
-.header-btn {
-  padding: 10px 12px;
-  color: #fff;
-
-  font-size: 1rem;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
 }
 
 .footer-btn {
@@ -157,20 +144,18 @@ Buttons
   padding-bottom: 25px;
 }
 
-.header-btn,
+.navbar__btn,
 .main-btn:hover,
 .footer-btn:hover {
   cursor: pointer;
 }
 
-.header-btn--signup {
-  margin-left: 5px;
+.navbar__btn--signup {
   background-color: #fff;
   color: black;
-  border-radius: 30px;
 }
 
-.header-btn--toggle {
+.navbar__btn--toggle {
   margin-left: 20px;
   background-color: #000;
   color: #fff;
@@ -267,20 +252,28 @@ header {
 }
 
 nav {
-  flex: 1;
-  margin: 0 10px;
+  width: 100%;
 
   display: flex;
   justify-content: space-between;
 }
 
-.navbar--mainmenu,
-.navbar--asidemenu,
-.login-menu ul {
+.navbar--mainmenu {
+  flex: 1;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar__center,
+.navbar__aside,
+.navbar--loginmenu {
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
+
 
 /* 
 ========================================
@@ -661,11 +654,17 @@ Media Queries
   #navbar-toggle {
     visibility: visible;
   }
-  nav {
+
+  .navbar--mainmenu {
     display: none;
   }
 
-  .header-btn--login span {
+  .navbar--loginmenu {
+    justify-content: flex-end;
+    flex: 1;
+  }
+
+  .navbar__login-text {
     display: none;
   }
 

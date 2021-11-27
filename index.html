@@ -27,43 +27,47 @@
         />
       </figure>
       <nav>
-        <ul class="navbar navbar--mainmenu">
-          <li><a class="header-btn header-btn--navbar header-btn--company" href="#">Company</a></li>
-          <li><a class="header-btn header-btn--navbar" href="#">Safety</a></li>
-          <li><a class="header-btn header-btn--navbar" href="#">Help</a></li>
-          <li><a class="header-btn header-btn--navbar" href="#">Covid 19 resources</a></li>
-        </ul>
-        <ul class="navbar navbar--asidemenu">
+        <div class="navbar navbar--mainmenu">
+          <ul class="navbar__center">
+            <li><a class="navbar__btn navbar__btn--company" href="#">Company</a></li>
+            <li><a class="navbar__btn" href="#">Safety</a></li>
+            <li><a class="navbar__btn" href="#">Help</a></li>
+            <li><a class="navbar__btn" href="#">Covid 19 resources</a></li>
+          </ul>
+          <ul class="navbar__aside">
+            <li>
+              <button class="navbar__btn navbar__btn--withicon">
+                <span><i class="fa fa-globe-w fa-lg" aria-hidden="true"></i></span>
+                <span>EN</span>
+              </button>
+            </li>
+            <li>
+              <button class="navbar__btn navbar__btn--withicon">
+                <span><i class="fa fa-th fa-lg" aria-hidden="true"></i> </span>
+                <span>Products</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+        
+    
+        <ul class="navbar navbar--loginmenu">
           <li>
-            <button class="header-btn header-btn--navbar header-btn--language">
-              <span><i class="fa fa-globe-w fa-lg" aria-hidden="true"></i></span>
-              <span>EN</span>
-            </button>
-          </li>
-          <li>
-            <button class="header-btn header-btn--navbar header-btn--products">
-              <span><i class="fa fa-th fa-lg" aria-hidden="true"></i> </span>
-              <span>Products</span>
-            </button>
-          </li>
-        </ul>
-      </nav>
-      <section class="login-menu">
-        <ul>
-          <li>
-            <button class="header-btn header-btn--navbar header-btn--login">
+            <button class="navbar__btn navbar__btn--withicon">
               <span><i class="fa fa-user-o fa-lg" aria-hidden="true"></i> </span>
-              <span>Log in</span>
+              <span class="navbar__login-text">Log in</span>
             </button>
           </li>
-          <li><a class="header-btn header-btn--signup" href="#">Sign up</a></li>
+          <li><a class="navbar__btn navbar__btn--signup" href="#">Sign up</a></li>
           <li id="navbar-toggle">
-            <button class="header-btn header-btn--toggle">
+            <button class="navbar__btn navbar__btn--toggle">
               <span><i class="fa fa-bars fa-2x" aria-hidden="true"></i> </span>
             </button>
           </li>
         </ul>
-      </section>
+
+      </nav>
+      
     </header>
 
     <main>
