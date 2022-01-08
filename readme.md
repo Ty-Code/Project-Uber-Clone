@@ -2,7 +2,13 @@
 
 ---
 
-I rebuilt the homepage of Uber website. In order to set up a responsive layout, I used both grid and flexbox models in various different combinations.
+Rebuilded the homepage of Uber website. In order to set up a responsive layout, both grid and flexbox models were used in various different combinations.
+
+The technologies that were used:
+
+![](https://img.shields.io/badge/Code-HTML-informational?style=flat-square&logo=html5&logoColor=white&color=blue)
+![](https://img.shields.io/badge/Code-CSS-informational?style=flat-square&logo=css3&logoColor=white&color=blue)
+ 
 
 ➡️  https://ty-code.github.io/HYF-Module-HTMLCSSGIT/week2/UBER-clone/
 
